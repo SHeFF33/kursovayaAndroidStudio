@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#2E2B36"
+    tools:context=".products.ItemActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/item_list_back"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/back_arrow" />
+
+        <TextView
+            android:textSize="27dp"
+            android:textColor="#FFFFFF"
+            android:layout_marginLeft="7dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Информация о телефоне" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/item_list_image_one"
+        android:layout_width="match_parent"
+        android:layout_height="385dp"
+        android:layout_marginTop="20dp"
+        android:scaleType="centerCrop"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <TextView
+        android:id="@+id/item_list_brand_one"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Производитель" />
+    <TextView
+        android:id="@+id/item_list_model_one"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Модель" />
+
+    <TextView
+        android:id="@+id/item_list_text"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textSize="17dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Полное описание" />
+
+    <TextView
+        android:id="@+id/item_list_magprice_one"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="end"
+        android:text="Цена магазина" />
+
+    <Button
+        android:id="@+id/button_buy"
+        android:layout_width="389dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:backgroundTint="#D5A10F"
+        android:text="Купить" />
+
+</LinearLayout>
