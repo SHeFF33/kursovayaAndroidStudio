@@ -46,7 +46,6 @@ class ProfileItemsAdapter(var items: List<Item>, var context: Context) : Recycle
 
         holder.image.setImageResource(imageId)
 
-        // Отображаем текстовое поле "Товар продан!", если статус товара равен false (0)
         if (!items[position].status) {
             holder.sold.visibility = View.VISIBLE
         } else {

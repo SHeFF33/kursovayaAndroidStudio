@@ -31,6 +31,8 @@ class ItemsActivity : AppCompatActivity() {
         }
 
         val dbHelper = DBHelper(this, null)
+
+
         if (dbHelper.getItems().isEmpty()) {
             dbHelper.addItem(Item(1, "phone1", "Apple","iPhone 6s", "64gb", "Fantastish dastich good!", 6000,8000, true), 1)
             dbHelper.addItem(Item(2, "phone2", "Apple","iPhone X","128gb", "Fantastish dastich good!",6000,9000, true), 1)

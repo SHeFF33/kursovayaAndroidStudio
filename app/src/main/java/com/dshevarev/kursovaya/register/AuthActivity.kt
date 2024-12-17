@@ -41,7 +41,7 @@ class AuthActivity : AppCompatActivity() {
                     startActivity(intent)
                 }
                 else {
-                    Toast.makeText(this, "Пользователь $email не авторизован", Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, "Пользователь $email не авторизован. Проверьте зполнение полей", Toast.LENGTH_LONG).show()
                 }
             }
         }

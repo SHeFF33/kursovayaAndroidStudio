@@ -31,7 +31,7 @@ class ProfActivity : AppCompatActivity() {
 
         val userEmail = intent.getStringExtra("useremail") ?: SharedPreferencesHelper.getUserEmail(this)
         if (userEmail == null) {
-            Toast.makeText(this, "Ошибка: useremail не найден", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "Ошибка: email не найден", Toast.LENGTH_LONG).show()
             return
         }
 

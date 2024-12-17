@@ -61,14 +61,14 @@ class SaleActivity : AppCompatActivity() {
 
         val userEmail = SharedPreferencesHelper.getUserEmail(this)
         if (userEmail == null) {
-            Toast.makeText(this, "Пользователь не найден", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Непредвиденная ошибка, попробуйте позже", Toast.LENGTH_SHORT).show()
             return
         }
 
         val dbHelper = DBHelper(this, null)
         val userId = dbHelper.getUserIdByEmail(userEmail)
         if (userId == -1) {
-            Toast.makeText(this, "Пользователь не найден", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this, "Непредвиденная ошибка, попробуйте позже", Toast.LENGTH_SHORT).show()
             return
         }
 
@@ -78,6 +78,7 @@ class SaleActivity : AppCompatActivity() {
         val image = if (getDrawableResourceId(imageName) != 0) {
             imageName
         } else {
+            Toast.makeText(this, "Ваше фото не было найдено. Применено стандартное фото", Toast.LENGTH_SHORT).show()
             "iphone"
         }
 
