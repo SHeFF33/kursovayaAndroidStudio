@@ -33,8 +33,8 @@ class RegActivity : AppCompatActivity() {
                 Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
             } else if (pass.length < 8) {
                 Toast.makeText(this, "Пароль должен быть не менее 8 символов", Toast.LENGTH_LONG).show()
-            } else if(phone.length > 11){
-                Toast.makeText(this, "Номер телефона не должен превышать 11 символов", Toast.LENGTH_LONG).show()
+            } else if(phone.length < 11 || phone.length > 11){
+                Toast.makeText(this, "Номер телефона должен состоять из 11 цифр", Toast.LENGTH_LONG).show()
             } else {
                 val db = DBHelper(this, null)
                 if (db.isEmailUnique(email)) {
