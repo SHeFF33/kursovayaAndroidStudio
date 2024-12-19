@@ -74,6 +74,14 @@
         android:layout_marginTop="10dp"
         android:backgroundTint="#D5A10F"
         android:text="Продать устройство" />
+    <Button
+        android:id="@+id/profile_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D5A10F"
+        android:text="История покупок" />
 
     <Button
         android:id="@+id/profile_admin"

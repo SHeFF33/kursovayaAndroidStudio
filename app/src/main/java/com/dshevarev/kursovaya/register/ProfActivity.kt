@@ -30,6 +30,7 @@ class ProfActivity : AppCompatActivity() {
         val onLogin: ImageView = findViewById(R.id.profile_onLogin)
         val sale: Button = findViewById(R.id.profile_item_list_sale)
         val adminpanel: Button = findViewById(R.id.profile_admin)
+        val history: Button = findViewById(R.id.profile_history)
 
         val userEmail = intent.getStringExtra("useremail") ?: SharedPreferencesHelper.getUserEmail(this)
         if (userEmail == null) {
@@ -49,6 +50,7 @@ class ProfActivity : AppCompatActivity() {
                 itemsList.visibility = View.GONE
                 noItemsTextView.visibility = View.GONE
                 sale.visibility = View.GONE
+                history.visibility = View.GONE
             } else {
                 adminpanel.visibility = View.GONE
                 val items = dbHelper.getItemsByUserId(userId)
@@ -82,6 +84,12 @@ class ProfActivity : AppCompatActivity() {
 
         adminpanel.setOnClickListener {
             val intent = Intent(this, AdminActivity::class.java)
+            intent.putExtra("useremail", userEmail)
+            startActivity(intent)
+        }
+
+        history.setOnClickListener {
+            val intent = Intent(this, PurchaseHistoryActivity::class.java)
             intent.putExtra("useremail", userEmail)
             startActivity(intent)
         }

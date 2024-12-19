@@ -260,4 +260,94 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
         db.close()
         return sales
     }
+    fun getSalesByUserId(userId: Int): List<Sale> {
+        val sales = mutableListOf<Sale>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM sales WHERE saleuser = (SELECT email FROM users WHERE id = $userId)", null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val sale = Sale(
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                    productId = cursor.getInt(cursor.getColumnIndexOrThrow("product_id")),
+                    brand = cursor.getString(cursor.getColumnIndexOrThrow("brand")),
+                    model = cursor.getString(cursor.getColumnIndexOrThrow("model")),
+                    price = cursor.getInt(cursor.getColumnIndexOrThrow("price")),
+                    magprice = cursor.getInt(cursor.getColumnIndexOrThrow("magprice")),
+                    saleUser = cursor.getString(cursor.getColumnIndexOrThrow("saleuser")),
+                    user = cursor.getString(cursor.getColumnIndexOrThrow("user")),
+                    saleDate = Date(cursor.getString(cursor.getColumnIndexOrThrow("sale_date")))
+                )
+                sales.add(sale)
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+        return sales
+    }
+
+    fun updateItem(item: Item) {
+        val values = ContentValues()
+        values.put("image", item.image)
+        values.put("brand", item.brand)
+        values.put("model", item.model)
+        values.put("description", item.description)
+        values.put("text", item.text)
+        values.put("price", item.price)
+        values.put("magprice", item.magprice)
+        values.put("status", if (item.status) 1 else 0)
+
+        val db = this.writableDatabase
+        db.update("items", values, "id = ?", arrayOf(item.id.toString()))
+        db.close()
+    }
+
+    fun getItemById(itemId: Int): Item? {
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM items WHERE id = $itemId", null)
+        var item: Item? = null
+        if (cursor.moveToFirst()) {
+            item = Item(
+                id = cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                image = cursor.getString(cursor.getColumnIndexOrThrow("image")),
+                brand = cursor.getString(cursor.getColumnIndexOrThrow("brand")),
+                model = cursor.getString(cursor.getColumnIndexOrThrow("model")),
+                description = cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                text = cursor.getString(cursor.getColumnIndexOrThrow("text")),
+                price = cursor.getInt(cursor.getColumnIndexOrThrow("price")),
+                magprice = cursor.getInt(cursor.getColumnIndexOrThrow("magprice")),
+                status = cursor.getInt(cursor.getColumnIndexOrThrow("status")) == 1
+            )
+        }
+        cursor.close()
+        db.close()
+        return item
+    }
+    fun getAllItems(): List<Item> {
+        val items = mutableListOf<Item>()
+        val db = this.readableDatabase
+        val cursor = db.rawQuery("SELECT * FROM items", null)
+
+        if (cursor.moveToFirst()) {
+            do {
+                val item = Item(
+                    id = cursor.getInt(cursor.getColumnIndexOrThrow("id")),
+                    image = cursor.getString(cursor.getColumnIndexOrThrow("image")),
+                    brand = cursor.getString(cursor.getColumnIndexOrThrow("brand")),
+                    model = cursor.getString(cursor.getColumnIndexOrThrow("model")),
+                    description = cursor.getString(cursor.getColumnIndexOrThrow("description")),
+                    text = cursor.getString(cursor.getColumnIndexOrThrow("text")),
+                    price = cursor.getInt(cursor.getColumnIndexOrThrow("price")),
+                    magprice = cursor.getInt(cursor.getColumnIndexOrThrow("magprice")),
+                    status = cursor.getInt(cursor.getColumnIndexOrThrow("status")) == 1
+                )
+                items.add(item)
+            } while (cursor.moveToNext())
+        }
+
+        cursor.close()
+        db.close()
+        return items
+    }
 }

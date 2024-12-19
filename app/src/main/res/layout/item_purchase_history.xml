@@ -4,38 +4,46 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:padding="16dp"
-    android:background="#333333">
+    android:background="#2E2B36">
 
     <TextView
-        android:id="@+id/user_item_email"
+        android:id="@+id/sale_item_brand"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Email"
         android:textSize="18sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:text="Brand" />
 
     <TextView
-        android:id="@+id/user_item_login"
+        android:id="@+id/sale_item_model"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Login"
         android:textSize="18sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:text="Model" />
 
     <TextView
-        android:id="@+id/user_item_phone"
+        android:id="@+id/sale_item_price"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Phone"
         android:textSize="18sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:text="Price" />
 
-    <CheckBox
-        android:id="@+id/user_item_is_admin"
+    <TextView
+        android:id="@+id/sale_item_magprice"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Роль администратора?"
         android:textSize="18sp"
-        android:textColor="#FFFFFF" />
+        android:textColor="#FFFFFF"
+        android:text="Magprice" />
+
+    <TextView
+        android:id="@+id/sale_item_saledate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF"
+        android:text="Sale Date" />
 
 </LinearLayout>

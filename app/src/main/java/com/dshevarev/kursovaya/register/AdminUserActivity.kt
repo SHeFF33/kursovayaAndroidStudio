@@ -24,7 +24,7 @@ class AdminUserActivity : AppCompatActivity() {
         dbHelper = DBHelper(this, null)
 
         val users = dbHelper.getAllUsers()
-        userAdapter = AdminUserAdapter(users)
+        userAdapter = AdminUserAdapter(users, dbHelper)
         recyclerView.adapter = userAdapter
         recyclerView.layoutManager = LinearLayoutManager(this)
     }

@@ -1,25 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#201E28"
-    tools:context=".register.AdminProductActivity">
+    android:background="#2E2B36">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Товары"
+        android:text="История покупок"
         android:textSize="24sp"
         android:textColor="#FFFFFF"
         android:padding="16dp"
         android:background="#333333" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerViewProducts"
+        android:id="@+id/recyclerViewPurchaseHistory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:padding="16dp" />

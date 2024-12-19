@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:paddingBottom="20dp"
+    android:layout_width="match_parent"
+    android:background="#2E2B36"
+    android:layout_marginBottom="20dp"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/edit_item_image_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:textColorHint="#898989"
+        android:textColor="#FFFFFF"
+        android:hint="Image Name" />
+
+    <EditText
+        android:id="@+id/edit_item_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:hint="Brand" />
+
+    <EditText
+        android:id="@+id/edit_item_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:hint="Model" />
+
+    <EditText
+        android:id="@+id/edit_item_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:layout_marginTop="10dp"
+        android:textColor="#FFFFFF"
+        android:hint="Description" />
+
+    <EditText
+        android:id="@+id/edit_item_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:hint="Text" />
+
+    <EditText
+        android:id="@+id/edit_item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:hint="Price"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edit_item_magprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:hint="Magprice"
+        android:inputType="number" />
+
+    <EditText
+        android:id="@+id/edit_item_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColorHint="#898989"
+        android:textColor="#FFFFFF"
+        android:layout_marginTop="10dp"
+        android:hint="Status (Active/Sold)" />
+
+    <Button
+        android:id="@+id/edit_item_update_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#D5A10F"
+        android:text="Применить изменения" />
+</LinearLayout>

@@ -64,12 +64,4 @@
         android:layout_height="wrap_content"
         android:gravity="end"
         android:text="TextView" />
-    <Button
-        android:id="@+id/profile_item_list_button"
-        android:layout_width="match_parent"
-        android:layout_gravity="center"
-        android:layout_marginTop="5dp"
-        android:layout_height="wrap_content"
-        android:backgroundTint="#D5A10F"
-        android:text="Просмотреть" />
 </LinearLayout>
