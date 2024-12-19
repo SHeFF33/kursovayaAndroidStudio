@@ -12,7 +12,7 @@ import java.util.Date
 import javax.crypto.SecretKey
 
 class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
-    SQLiteOpenHelper(context, "app", factory, 13) {
+    SQLiteOpenHelper(context, "app", factory, 14) {
 
     private val secretKey: SecretKey = CryptoUtils.getKey(context)
 
@@ -349,5 +349,11 @@ class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
         cursor.close()
         db.close()
         return items
+    }
+
+    fun deleteItem(itemId: Int) {
+        val db = this.writableDatabase
+        db.delete("items", "id = ?", arrayOf(itemId.toString()))
+        db.close()
     }
 }

@@ -96,4 +96,13 @@
         android:layout_height="wrap_content"
         android:backgroundTint="#D5A10F"
         android:text="Изменить" />
+
+    <Button
+        android:id="@+id/item_list_delete_button"
+        android:layout_width="match_parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="5dp"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#FF0000"
+        android:text="Удалить" />
 </LinearLayout>

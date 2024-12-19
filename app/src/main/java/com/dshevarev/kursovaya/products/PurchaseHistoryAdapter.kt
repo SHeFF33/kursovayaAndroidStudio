@@ -13,7 +13,6 @@ class PurchaseHistoryAdapter(var sales: List<Sale>) : RecyclerView.Adapter<Purch
     class SaleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val brand: TextView = itemView.findViewById(R.id.sale_item_brand)
         val model: TextView = itemView.findViewById(R.id.sale_item_model)
-        val price: TextView = itemView.findViewById(R.id.sale_item_price)
         val magprice: TextView = itemView.findViewById(R.id.sale_item_magprice)
         val saleDate: TextView = itemView.findViewById(R.id.sale_item_saledate)
     }
@@ -27,7 +26,6 @@ class PurchaseHistoryAdapter(var sales: List<Sale>) : RecyclerView.Adapter<Purch
         val sale = sales[position]
         holder.brand.text = sale.brand
         holder.model.text = sale.model
-        holder.price.text = sale.price.toString()
         holder.magprice.text = sale.magprice.toString()
         holder.saleDate.text = sale.saleDate.toString()
     }

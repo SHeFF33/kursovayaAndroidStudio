@@ -10,6 +10,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.dshevarev.kursovaya.R
+import com.dshevarev.kursovaya.dbhelper.DBHelper
 import com.dshevarev.kursovaya.models.Item
 import com.dshevarev.kursovaya.register.EditItemActivity
 
@@ -25,6 +26,7 @@ class AdminProductAdapter(var items: List<Item>, var context: Context) : Recycle
         val magprice: TextView = view.findViewById(R.id.item_list_magprice)
         val status: TextView = view.findViewById(R.id.item_list_status)
         val edit: Button = view.findViewById(R.id.item_list_edit_button)
+        val delete: Button = view.findViewById(R.id.item_list_delete_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -57,6 +59,13 @@ class AdminProductAdapter(var items: List<Item>, var context: Context) : Recycle
             val intent = Intent(context, EditItemActivity::class.java)
             intent.putExtra("itemId", items[position].id)
             context.startActivity(intent)
+        }
+
+        holder.delete.setOnClickListener {
+            val dbHelper = DBHelper(context, null)
+            dbHelper.deleteItem(items[position].id)
+            items = items.filter { it.id != items[position].id }
+            notifyDataSetChanged()
         }
     }
 
