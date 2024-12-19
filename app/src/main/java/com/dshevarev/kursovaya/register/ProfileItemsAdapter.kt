@@ -21,6 +21,7 @@ class ProfileItemsAdapter(var items: List<Item>, var context: Context) : Recycle
         val description: TextView = view.findViewById(R.id.profile_item_list_description)
         val price: TextView = view.findViewById(R.id.profile_item_list_price)
         val sold: TextView = view.findViewById(R.id.profile_item_list_sold)
+        val see: Button = view.findViewById(R.id.profile_item_list_button)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {

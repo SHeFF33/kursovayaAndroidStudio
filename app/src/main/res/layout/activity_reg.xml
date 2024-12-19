@@ -50,6 +50,7 @@
         android:layout_gravity="center"
         android:textColor="#fdfdfd"
         android:hint="Введите никнейм" />
+
     <EditText
         android:id="@+id/user_phone"
         android:layout_width="220dp"
@@ -73,6 +74,15 @@
         android:layout_gravity="center"
         android:textColor="#fdfdfd"
         android:hint="Введите пароль" />
+
+    <CheckBox
+        android:id="@+id/check_admin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:text="Зарегистрироваться как админ"
+        android:textColor="#fdfdfd" />
 
     <Button
         android:id="@+id/button_reg"

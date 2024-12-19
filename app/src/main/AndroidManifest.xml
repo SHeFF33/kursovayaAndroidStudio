@@ -16,6 +16,21 @@
         android:theme="@style/Theme.Kursovaya"
         tools:targetApi="31">
         <activity
+            android:name=".register.ChangeUserRoleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".register.AdminProductActivity"
+            android:exported="false" />
+        <activity
+            android:name=".register.AdminUserActivity"
+            android:exported="false" />
+        <activity
+            android:name=".register.AdminSaleActivity"
+            android:exported="false" />
+        <activity
+            android:name=".register.AdminActivity"
+            android:exported="false" />
+        <activity
             android:name=".register.SaleActivity"
             android:exported="false" />
         <activity

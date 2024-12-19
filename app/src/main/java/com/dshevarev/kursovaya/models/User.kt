@@ -1,4 +1,3 @@
 package com.dshevarev.kursovaya.models
 
-class User(val email: String, val login:String, val phone: String, val pass:String) {
-}
+class User(val email: String, val login: String, val phone: String, val pass: String, val isAdmin: Boolean)

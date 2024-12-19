@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#333333">
+
+    <TextView
+        android:id="@+id/sale_item_brand"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Производитель"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_model"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Модель"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_price"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Цена"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_magprice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Цена магазина"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_saleuser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Покупатель"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Продавец"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+    <TextView
+        android:id="@+id/sale_item_saledate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Дата продажи"
+        android:textSize="18sp"
+        android:textColor="#FFFFFF" />
+
+</LinearLayout>

@@ -25,13 +25,12 @@ class AuthActivity : AppCompatActivity() {
             val email = userEmail.text.toString().trim()
             val pass = userPassword.text.toString().trim()
 
-            if(email.isEmpty() || pass.isEmpty()){
+            if (email.isEmpty() || pass.isEmpty()) {
                 Toast.makeText(this, "Не все поля заполнены", Toast.LENGTH_LONG).show()
-            }
-            else {
+            } else {
                 val db = DBHelper(this, null)
                 val isAuth = db.getUser(email, pass)
-                if(isAuth) {
+                if (isAuth) {
                     Toast.makeText(this, "Пользователь $email авторизован", Toast.LENGTH_LONG).show()
                     userEmail.text.clear()
                     userPassword.text.clear()
@@ -39,13 +38,12 @@ class AuthActivity : AppCompatActivity() {
                     val intent = Intent(this, ItemsActivity::class.java)
                     intent.putExtra("useremail", email)
                     startActivity(intent)
-                }
-                else {
+                } else {
                     Toast.makeText(this, "Пользователь $email не авторизован. Проверьте зполнение полей", Toast.LENGTH_LONG).show()
                 }
             }
         }
-        linkToReg.setOnClickListener{
+        linkToReg.setOnClickListener {
             val intent = Intent(this, RegActivity::class.java)
             startActivity(intent)
         }

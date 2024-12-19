@@ -53,7 +53,8 @@ class ItemsAdapter(var items: List<Item>, var context: Context) : RecyclerView.A
             intent.putExtra("itemBrand", items[position].brand)
             intent.putExtra("itemModel", items[position].model)
             intent.putExtra("itemText", items[position].text)
-            intent.putExtra("itemMagprice", items[position].magprice.toString())
+            intent.putExtra("itemPrice", items[position].price)
+            intent.putExtra("itemMagprice", items[position].magprice)
             (context as ItemsActivity).startActivityForResult(intent, 1)
         }
     }

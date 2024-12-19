@@ -2,6 +2,7 @@ package com.dshevarev.kursovaya.register
 
 import android.content.Intent
 import android.os.Bundle
+import android.view.View
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
@@ -28,6 +29,7 @@ class ProfActivity : AppCompatActivity() {
         val back: ImageView = findViewById(R.id.profile_item_list_back)
         val onLogin: ImageView = findViewById(R.id.profile_onLogin)
         val sale: Button = findViewById(R.id.profile_item_list_sale)
+        val adminpanel: Button = findViewById(R.id.profile_admin)
 
         val userEmail = intent.getStringExtra("useremail") ?: SharedPreferencesHelper.getUserEmail(this)
         if (userEmail == null) {
@@ -36,38 +38,50 @@ class ProfActivity : AppCompatActivity() {
         }
 
         val userId = dbHelper.getUserIdByEmail(userEmail)
-
         val user = dbHelper.getUserById(userId)
 
         if (user != null) {
             emailTextView.text = user.email
             loginTextView.text = user.login
             phoneTextView.text = user.phone
+
+            if (user.isAdmin) {
+                itemsList.visibility = View.GONE
+                noItemsTextView.visibility = View.GONE
+                sale.visibility = View.GONE
+            } else {
+                adminpanel.visibility = View.GONE
+                val items = dbHelper.getItemsByUserId(userId)
+                if (items.isEmpty()) {
+                    noItemsTextView.visibility = View.VISIBLE
+                    itemsList.visibility = View.GONE
+                } else {
+                    noItemsTextView.visibility = View.GONE
+                    itemsList.visibility = View.VISIBLE
+                    itemsList.layoutManager = LinearLayoutManager(this)
+                    itemsList.adapter = ProfileItemsAdapter(items, this)
+                }
+            }
         }
 
-        val items = dbHelper.getItemsByUserId(userId)
-
-        if (items.isEmpty()) {
-            noItemsTextView.visibility = TextView.VISIBLE
-            itemsList.visibility = RecyclerView.GONE
-        } else {
-            noItemsTextView.visibility = TextView.GONE
-            itemsList.visibility = RecyclerView.VISIBLE
-            itemsList.layoutManager = LinearLayoutManager(this)
-            itemsList.adapter = ProfileItemsAdapter(items, this)
-        }
-        back.setOnClickListener{
+        back.setOnClickListener {
             val intent = Intent(this, ItemsActivity::class.java)
             startActivity(intent)
         }
 
-        onLogin.setOnClickListener{
+        onLogin.setOnClickListener {
             val intent = Intent(this, AuthActivity::class.java)
             startActivity(intent)
         }
 
         sale.setOnClickListener {
             val intent = Intent(this, SaleActivity::class.java)
+            intent.putExtra("useremail", userEmail)
+            startActivity(intent)
+        }
+
+        adminpanel.setOnClickListener {
+            val intent = Intent(this, AdminActivity::class.java)
             intent.putExtra("useremail", userEmail)
             startActivity(intent)
         }
