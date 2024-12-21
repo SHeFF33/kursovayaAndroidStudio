@@ -34,12 +34,12 @@ class ItemsActivity : AppCompatActivity() {
 
 
         if (dbHelper.getItems().isEmpty()) {
-            dbHelper.addItem(Item(1, "phone1", "Apple","iPhone 6s", "64gb", "Fantastish dastich good!", 6000,8000, true), 1)
-            dbHelper.addItem(Item(2, "phone2", "Apple","iPhone X","128gb", "Fantastish dastich good!",6000,9000, true), 1)
-            dbHelper.addItem(Item(3, "phone6", "Apple","iPhone 7" ,"256gb", "Fantastish dastich good!",6000,10000, true), 1)
-            dbHelper.addItem(Item(4, "phone1", "Samsung","galaxy s8", "16gb", "Fantastish dastich good!",6000,12000, true), 1)
-            dbHelper.addItem(Item(5, "phone2", "Apple","iPhone 6", "64gb", "Fantastish dastich good!",6000,6000, true), 1)
-            dbHelper.addItem(Item(6, "phone6", "Apple","iPhone 6s", "32gb", "Fantastish dastich good!",6000,4900, true), 1)
+            dbHelper.addItem(Item(1, "iphone6s", "Apple","iPhone 6s", "64gb", "Fantastish dastich good!", 3000,5000, true), 1)
+            dbHelper.addItem(Item(2, "iphonex", "Apple","iPhone X","128gb", "Fantastish dastich good!",10000,12000, true), 1)
+            dbHelper.addItem(Item(3, "iphone11", "Apple","iPhone 11" ,"256gb", "Fantastish dastich good!",6000,10000, true), 1)
+            dbHelper.addItem(Item(4, "samsungs20", "Samsung","galaxy s20", "256gb", "Fantastish dastich good!",14000,19000, true), 1)
+            dbHelper.addItem(Item(5, "samsungs21", "Samsung","galaxy s21", "256gb", "Fantastish dastich good!",18000,23000, true), 1)
+            dbHelper.addItem(Item(6, "redmi12", "Redmi","12", "128gb", "Fantastish dastich good!",9000,14900, true), 1)
         }
         val items = dbHelper.getItems()
         itemsList.layoutManager = LinearLayoutManager(this)

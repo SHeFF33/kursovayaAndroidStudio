@@ -12,7 +12,7 @@ import java.util.Date
 import javax.crypto.SecretKey
 
 class DBHelper(val context: Context, factory: SQLiteDatabase.CursorFactory?) :
-    SQLiteOpenHelper(context, "app", factory, 14) {
+    SQLiteOpenHelper(context, "app", factory, 15) {
 
     private val secretKey: SecretKey = CryptoUtils.getKey(context)
 
